@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Aug 15 16:36:29 2020
+
+@author: josegrau
+"""
+
+#Bahit1
+
+def validacionNombre(nombre):
+    if len(nombre)<6:
+        print("El nombre de usuario debe contener al menos 6 caracteres")
+    else:
+        if len(nombre)>12:
+            print("El nombre de usuario no puede contener más de 12 caracteres")
+        else:
+            if nombre.isalnum() == False:
+                print ("El nombre de usuario puede contener solo letras y números")
+            else:
+                return True
+            
+            
+usuario = input("Introduzca su nombre de usuario:\n")
+
+check = validacionNombre(usuario)
+
+if check == True:
+    print ("\nNombre válido")
