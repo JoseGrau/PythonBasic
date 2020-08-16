@@ -10,20 +10,36 @@ Created on Sat Aug 15 16:36:29 2020
 
 def validacionNombre(nombre):
     if len(nombre)<6:
-        print("El nombre de usuario debe contener al menos 6 caracteres")
+        print("\nEl nombre de usuario debe contener al menos 6 caracteres")
     else:
         if len(nombre)>12:
-            print("El nombre de usuario no puede contener más de 12 caracteres")
+            print("\nEl nombre de usuario no puede contener más de 12 caracteres")
         else:
             if nombre.isalnum() == False:
-                print ("El nombre de usuario puede contener solo letras y números")
+                print ("\nEl nombre de usuario puede contener solo letras y números")
             else:
                 return True
+      
             
-            
+def validacionContraseña(contraseña):
+    if len(contraseña)>8:
+        if contraseña.islower() == False:
+            if contraseña.isupper() == False:
+                if contraseña.isdigit() == False:    
+                    if contraseña.isalnum() == False:
+                        if contraseña.isalpha() == False:
+                            if contraseña.find(" ") == -1: 
+                                return True
+    print("\nLa contraseña elegida no es segura")
+  
+          
 usuario = input("Introduzca su nombre de usuario:\n")
 
-check = validacionNombre(usuario)
+contraseña = input("Introduzca su contraseña:\n")
 
-if check == True:
-    print ("\nNombre válido")
+check1 = validacionNombre(usuario)
+check2 = validacionContraseña(contraseña)
+
+if check1 == True and check2 == True:
+    print ("\nUsuario válido\n")
+    
