@@ -20,15 +20,15 @@ x_train_sorted = x_train[idx]
 x = x_train[y_train == 7]
 y = x.mean(axis = 0)
 
-h,w = y.shape
+img = np.rot90(y,3)
 
-empty_img = np.zeros([h,w])
+#h,w = y.shape
+#img = np.zeros([h,w])
+#for i in range(h):
+#    for j in range(w):
+#        img[i,j] = y[-j+1,i-1]
+#        img = img[0:h,0:w]
 
-for i in range(h):
-    for j in range(w):
-        empty_img[i,j] = y[-j+1,i-1]
-        empty_img = empty_img[0:h,0:w]
 
-
-plt.imshow(empty_img,cmap = 'gray')
+plt.imshow(img,cmap = 'gray')
 plt.show()
