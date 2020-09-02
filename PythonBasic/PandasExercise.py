@@ -13,14 +13,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 size = 1000
-rad = np.random.random(size) * 250
+rad = np.random.random(size) * 2*np.pi
 mod = np.random.randn(size) + 5
 
 x0= mod * np.cos(rad)
 x1= mod * np.sin(rad)
 x = np.vstack((x0,x1))
 
-rad = np.random.random(size) * 250
+rad = np.random.random(size) * 2*np.pi
 mod = np.random.randn(size) + 10
 x0= mod * np.cos(rad)
 x1= mod * np.sin(rad)
