@@ -13,7 +13,8 @@ Created on Thu Sep 17 18:12:30 2020
 
 
 import numpy as np
-
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
 #Empezamos en w1,w2 = algún valor , y sabemos que queremos llegar al valor w = 0
 w1 = -42
 w2 = 12
@@ -39,4 +40,21 @@ for i in range(steps):
 print(w1)
 print(w2)
 
-    
+fig = plt.figure()
+ax = plt.axes(projection="3d")
+
+x = np.linspace(-50, 50, 100)
+y = np.linspace(-50, 50, 1000)
+
+X, Y = np.meshgrid(x, y)
+Z = X**2+Y**4
+
+fig = plt.figure()
+ax = plt.axes(projection="3d")
+ax.view_init(elev=30, azim=15)
+ax.plot_wireframe(X, Y, Z, alpha = 0.2)
+
+ax = plt.gca()
+
+
+ax.scatter(p1, p2, p1**2+p2**4, color="red")
